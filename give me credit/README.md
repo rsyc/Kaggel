@@ -9,7 +9,8 @@ Having some features of customers, we want to see if credit card(s) should be gi
 ## The data
 
 Data was provided as csv files (cs_tes.csv, cs_training.csv). Each file contains 12 columns:
-'>Unnamed'  --> customer ID
+
+> 'Unnamed'  --> customer ID
 
 TRAIN/TEST DEPENDENT VALUE: 
 >'SeriousDlqin2yrs' --> Delinquent customer (Y/N)
@@ -53,7 +54,7 @@ used Logestic regression model (sklearn,linear_model,LogisticRegression)
 
 As the test csv file did not have y_test, I split the training data into training and test to see how the model works and then used th model on test csv data for prediction
 
-Model performance was checked using consusion matrix, computing accuracy, precision, recall, and f1 scores. 
+Model performance was checked using confusion matrix, computing accuracy, precision, recall, and f1 scores. 
 
 ### Results
 
