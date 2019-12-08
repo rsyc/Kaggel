@@ -9,20 +9,22 @@ Having some features of customers, we want to see if credit card(s) should be gi
 ## The data
 
 Data was provided as csv files (cs_tes.csv, cs_training.csv). Each file contains 12 columns:
-'Unnamed'  --> customer ID
+'>Unnamed'  --> customer ID
+
 TRAIN/TEST DEPENDENT VALUE: 
-'SeriousDlqin2yrs' --> Delinquent customer (Y/N)
+>'SeriousDlqin2yrs' --> Delinquent customer (Y/N)
+
 FEATURES:
-'RevolvingUtilizationOfUnsecuredLines' --> debt to credit limit
-'age' --> customer age
-'NumberOfTime30-59DaysPastDueNotWorse' --> #of time 30-59 days have past due date
-'DebtRatio' --> debt to income ratio
-'MonthlyIncome' --> monthly income 
-'NumberOfOpenCreditLinesAndLoans' --> #of open credits
-'NumberOfTimes90DaysLate' --> #of time more than 90 days have past due date
-'NumberRealEstateLoansOrLines' --> #of mortgages
-'NumberOfTime60-89DaysPastDueNotWorse' --> #of time 60-89 days have past due date
-'NumberOfDependents' --> #of dependent persons (children and spouse)
+> 'RevolvingUtilizationOfUnsecuredLines' --> debt to credit limit
+> 'age' --> customer age
+> 'NumberOfTime30-59DaysPastDueNotWorse' --> #of time 30-59 days have past due date
+> 'DebtRatio' --> debt to income ratio
+> 'MonthlyIncome' --> monthly income 
+> 'NumberOfOpenCreditLinesAndLoans' --> #of open credits
+> 'NumberOfTimes90DaysLate' --> #of time more than 90 days have past due date
+> 'NumberRealEstateLoansOrLines' --> #of mortgages
+> 'NumberOfTime60-89DaysPastDueNotWorse' --> #of time 60-89 days have past due date
+> 'NumberOfDependents' --> #of dependent persons (children and spouse)
 
 ## Solution
 
