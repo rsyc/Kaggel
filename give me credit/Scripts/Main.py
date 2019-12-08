@@ -230,7 +230,7 @@ print('Accuracy of logistic regression classifier on test set: {:.2f}'.format(cl
 
 tn, fp, fn, tp = confusion_matrix(y_test,y_predict).ravel()
 print (tn, fp, fn, tp)
-#create consusion matrix and plot
+#create confusion matrix and plot
 skplt.metrics.plot_confusion_matrix(y_test,y_predict,figsize=(8,8))
 
 print(classification_report(y_test, y_predict))
