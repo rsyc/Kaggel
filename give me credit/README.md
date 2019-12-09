@@ -50,15 +50,17 @@ FEATURES:
 
 ### Modeling Technique
 
-used Logestic regression model (sklearn,linear_model,LogisticRegression)
+used Logestic regression model and XGBoost moodel (sklearn,linear_model,LogisticRegression, and XGBClassifier)
 
-As the test csv file did not have y_test, I split the training data into training and test to see how the model works and then used th model on test csv data for prediction
+As the test csv file did not have y_test, I split the training data into training and test to see how the model works and then used the model on test csv data for prediction
 
 Model performance was checked using confusion matrix, computing accuracy, precision, recall, and f1 scores. 
 
+XGBoost model gives better results and better performance. 
+
 ### Results
 
-Model output (prediction for test features) is saved into a csv file name: 'results.csv'
+Model output (prediction for test features) is saved into a csv file name: 'Logestic_results.csv'--> for the Logestic Regression Model and 'XGBoost_results' --> for the XGBoost Model
 
 
 

@@ -9,7 +9,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
 import scikitplot as skplt
 from sklearn.metrics import classification_report
-
+from xgboost import XGBClassifier
 
 #from sklearn import preprocessing
 #from sklearn.linear_model import LogisticRegression
@@ -34,8 +34,8 @@ def func(x):
 
 
 
-train_df = pd.read_csv('cs-training.csv')
-test_df = pd.read_csv('cs-test.csv')
+train_df = pd.read_csv('..\Data\cs-training.csv')
+test_df = pd.read_csv('..\Data\cs-test.csv')
 
 
 #Finding Nulls in the training and test set
@@ -245,11 +245,31 @@ yPredict = clf.predict(test_X)
 
 
 yout = pd.DataFrame({'Id':test_df.dropna(subset=['MonthlyIncome'])['Unnamed: 0'],'Binary result':yPredict})
-yout.to_csv('results.csv',index=False)
+yout.to_csv('Logestic_results.csv',index=False)
+
+#___________________________________XGBooster Model____________________________
+model = XGBClassifier()
+model.fit(x_train, y_train)
+y_predict = model.predict(x_test)
+tn, fp, fn, tp = confusion_matrix(y_test,y_predict).ravel()
+print (tn, fp, fn, tp)
+#create confusion matrix and plot
+skplt.metrics.plot_confusion_matrix(y_test,y_predict,figsize=(8,8))
+print(classification_report(y_test, y_predict))
+print('f1_score:', sklearn.metrics.f1_score(y_test, y_predict) )
+print('accuracy_score:', sklearn.metrics.accuracy_score(y_test, y_predict))
+print('precision_score:', sklearn.metrics.precision_score(y_test, y_predict))
+print('Recall:', sklearn.metrics.recall_score(y_test, y_predict))
+
+yPredict_XGBoost = model.predict(test_X)
+
+
+yout = pd.DataFrame({'Id':test_df.dropna(subset=['MonthlyIncome'])['Unnamed: 0'],'Binary result':yPredict_XGBoost})
+yout.to_csv('XGBoost_results.csv',index=False)
+
 
 
 #plt.show()
-
 '''debt_to_Limit=train_df[u'RevolvingUtilizationOfUnsecuredLines']
 debt_to_income=train_df[u'DebtRatio']
 age=train_df[u'age']
